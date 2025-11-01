@@ -1,0 +1,180 @@
+body {
+    background-color: #111;
+    color: #e2e8f0;
+    font-family: 'Inter', sans-serif;
+}
+
+/* This adds a very subtle 'noise' texture, common in modern UI */
+.noise-bg {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.2' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.02'/%3E%3C/svg%3E");
+}
+
+/* REMOVED: .grid-background */
+
+/* NEW: Hero Gradient Background */
+.hero-gradient-bg {
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(ellipse 50% 50% at 50% 50%, rgba(139, 92, 246, 0.15) 0%, rgba(17, 17, 17, 0) 100%);
+}
+
+
+.font-roboto-mono {
+    font-family: 'Roboto Mono', monospace;
+}
+
+/* NEW: Modern Card Style */
+.modern-card {
+    background-color: rgba(24, 24, 27, 0.5); /* A solid, dark zinc color */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 0.5rem; /* 8px */
+    transition: all 0.3s ease;
+}
+
+.modern-card:hover {
+    background-color: rgba(39, 39, 42, 0.5); /* Slightly lighter on hover */
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Make project cards lift up a bit */
+.project-card:hover {
+    transform: translateY(-4px);
+    border-color: #8B5CF6; /* Add accent on hover */
+}
+
+.btn-primary {
+    background: linear-gradient(90deg, #3B82F6, #8B5CF6);
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(139, 92, 246, 0.2);
+}
+
+.typewriter-cursor {
+    display: inline-block;
+    width: 8px;
+    height: 1.5em;
+    background-color: #8B5CF6;
+    animation: blink 0.7s infinite;
+    margin-left: 4px;
+    transform: translateY(4px);
+}
+
+@keyframes blink {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+}
+
+.scroll-indicator {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #3B82F6, #8B5CF6);
+    width: 0%;
+    z-index: 50;
+}
+
+/* .section-title {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    display: inline-block;
+    padding-bottom: 0.5rem;
+} */
+
+.section-title {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    display: inline-block; 
+    padding-bottom: 0.5rem;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 3px;
+    background: linear-gradient(90deg, #3B82F6, #8B5CF6);
+}
+
+.full-screen-section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding-top: 6rem;   /* Adjust padding as needed */
+    padding-bottom: 6rem; /* Adjust padding as needed */
+}
+
+/* Timeline styles */
+.timeline-item {
+    position: relative;
+    padding-bottom: 2.5rem;
+    padding-left: 2.5rem;
+}
+
+.timeline-item:last-child {
+    padding-bottom: 0;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 5px;
+    width: 1px;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.timeline-dot {
+    position: absolute;
+    left: -8px;
+    top: 5px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #111;
+    border: 2px solid #8B5CF6;
+    transition: all 0.3s ease;
+}
+
+.timeline-item:hover .timeline-dot {
+    transform: scale(1.2);
+    background: #8B5CF6;
+    box-shadow: 0 0 15px rgba(139, 92, 246, 0.5);
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(5px);
+}
+
+.modal-content {
+    margin: 10% auto;
+    width: 90%;
+    max-width: 700px;
+}
+
